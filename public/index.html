@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Please Confirm You Are A Robot</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="icon" type="image/png" href="https://cdn.glitch.com/a5e521be-edd4-433c-885e-f2d838d40fbf%2Frobot-face_1f916.png?1535598868993" />
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+    
+    <!-- import the webpage's javascript file -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="/script.js" defer></script>
+  </head>  
+  <body>
+    <h1>Please Confirm You Are A Robot</h1>
+    
+    <form action="/new-robot" method="get">
+      <div id="name-container">
+        <label class="name">Name:</label>
+        <input type="text" name="name" class="name" id="name">
+        <p id="name-alert">
+              Please enter a name.
+        </p>
+      </div>
+
+      <div id="captcha-container">
+        
+     
+        <div id="robot-checkbox">
+          <div id="checkbox-container">
+            <input id="checkbox" type="checkbox" />
+            <span id="custom-checkbox">
+              <span id="check">✔︎</span>
+            </span>
+            <label id="robot-label">I am a robot.</label>
+          </div>
+          <div id="info">
+            <img id="robot" src="https://cdn.glitch.com/a5e521be-edd4-433c-885e-f2d838d40fbf%2Frobot-face_1f916.png?1535598868993">
+            <div id="robotcha">
+              roBOTCHA
+            </div>
+            <div id="links">
+              <a href="/privacy">Privacy</a> - <a href="/terms">Terms</a>
+            </div>
+          </div>
+
+        </div>
+        <p id="checkbox-alert">
+            Please verify that you are a robot.
+        </p>
+      </div>
+      
+      <button id="submit" type="submit">
+        Submit
+      </button>
+    </form>
+      
+    
+    <div id="images">
+      <div id="images-header">
+        <h4>
+          Select all images
+        </h4>
+        <h2>
+          <strong>taken on a Tuesday</strong>
+        </h2>
+      </div>
+      <div id="images-thumbnails">
+
+      </div>
+      <div id="images-footer">
+        <div id="rc-buttons">
+          <img src="https://cdn.glitch.com/3097627a-625f-427e-850e-01c82e2ff745%2Frefresh_black.png?1536258099989">
+          <img src="https://cdn.glitch.com/3097627a-625f-427e-850e-01c82e2ff745%2Faudio_black.png?1536258100074">
+          <img src="https://cdn.glitch.com/3097627a-625f-427e-850e-01c82e2ff745%2Finfo_black.png?1536258099893">
+        </div>
+        <button id="verify-button">
+          VERIFY
+        </button>
+      </div>
+    </div>
+    
+    <div id="bubble-arrow-grey" class="bubble-arrow"></div>
+    <div id="bubble-arrow-white" class="bubble-arrow"></div>
+    
+    <div id="alert">
+      <h3 id="alert-header">
+        We're not sure you are a robot
+      </h3>
+      <p id="alert-message">
+        You did not complete the verification correctly. If you are a robot please try again.
+      </p>
+      <button id="try-again">
+        ⟳ Try Again
+      </button>
+    </div>
+    
+    <div id="confirmed-robots-section">
+      <h2>
+        Confirmed Robots:
+      </h2>
+      <div id="confirmed-robots">
+        <p v-if="robots.length === 0">{{ defaultText }}</p>
+        <ol>
+          <li v-for="robot in robots">
+            {{ robot.name }}
+          </li>
+        </ol>
+      </div>
+    </div>
+
+
+    <!-- include the Glitch button to show what the webpage is about and
+          to make it easier for folks to view source and remix -->
+    <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
+    <script src="https://button.glitch.me/button.js"></script>
+  </body>
+</html>
