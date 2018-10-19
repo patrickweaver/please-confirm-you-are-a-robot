@@ -4,6 +4,9 @@
 // init project
 var express = require('express');
 var bodyParser = require('body-parser');
+var h2p = require('html2plaintext');
+var Filter = require('bad-words'),
+    filter = new Filter();
 var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -44,8 +47,9 @@ app.get('/get-robots', function(req, res) {
 
 app.get('/new-robot', function(req, res) {
   if (req.query.name) {
+    var robotName = filter.clean(h2p(req.query.name));
     db.serialize(function() {
-      db.run('INSERT INTO Robots (name) VALUES ("' + req.query.name + '")');
+      db.run('INSERT INTO Robots (name) VALUES ("' + robotName + '")');
       res.redirect('/');
     });
   } else {
