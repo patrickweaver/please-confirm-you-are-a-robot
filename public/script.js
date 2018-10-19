@@ -1,4 +1,4 @@
-var delayTime = 10000;
+var delayTime = 100;
 
 var customCheckbox = document.getElementById("custom-checkbox");
 var realCheckbox = document.getElementById("checkbox");
