@@ -13,6 +13,7 @@ var checkboxAlert = document.getElementById("checkbox-alert");
 var nameAlert = document.getElementById("name-alert");
 var captchaContainer = document.getElementById("captcha-container");
 var nameContainer = document.getElementById("name-container");
+var robotsList = document.getElementById("confirmed-robots-section");
 
 function handleRobotClick(e) {
   var inputCheckbox = document.getElementById("checkbox");
@@ -50,10 +51,12 @@ function isNotRobot() {
 function handleNotRobotClick(e) {
   
   imagesPopup.style.display = "block";
+  robotsList.style.bottom = "20px";
   bag.style.display = "block";
   baw.style.display = "block";
   setTimeout(function() {
     imagesPopup.style.display = "none";
+    robotsList.style.bottom = "187px";
     bag.style.display = "none";
     baw.style.display = "none";
     alertBox.style.display = "block";
@@ -62,6 +65,7 @@ function handleNotRobotClick(e) {
 
 function hideAlert(e) {
   alertBox.style.display = "none";
+  robotsList.style.bottom = "0px";
 }
 
 
