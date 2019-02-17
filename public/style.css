@@ -168,7 +168,6 @@ button:hover {
   position: relative;
   z-index: 100;
   text-align: left;
-  bottom: 240px;
   left: 526px;
   overflow: hidden;
 }
@@ -296,6 +295,7 @@ button:hover {
 
 #confirmed-robots-section {
   margin-top: 4em;
+  position: relative;
 }
 
 #confirmed-robots {
