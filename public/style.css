@@ -26,6 +26,10 @@ input {
   max-width: Calc(100% - 20px);
 }
 
+button {
+  color: #000;
+}
+
 .name {
   font-size: 18px;
   line-height: 22px;
@@ -94,8 +98,6 @@ input {
   width: 70px;
 }
 
-#robot-checkbox { 
-}
 
 
 #robot-checkbox #custom-checkbox {
@@ -112,7 +114,8 @@ input {
   line-height: 17px;
 }
 
-#robot-checkbox label, #robot-checkbox #custom-checkbox {
+#robot-checkbox label,
+#robot-checkbox #custom-checkbox {
   display: inline-block;
   vertical-align: middle;
 }
@@ -203,7 +206,8 @@ button:hover {
   text-align: left;
 }
 
-#images-header h4, #images-header h2 {
+#images-header h4,
+#images-header h2 {
   margin: .5em 0;
   display: block;
   font-family: Roboto, helvetica, arial, sans-serif
@@ -262,7 +266,7 @@ button:hover {
 }
 
 #rc-buttons img {
-  opacity: 0.5; 
+  opacity: 0.5;
   cursor: pointer;
 }
 
@@ -320,7 +324,7 @@ button:hover {
     top: 10px;
     margin: 0 auto;
     left: Calc(50% - 204px)
-  } 
+  }
 }
 
 
@@ -329,8 +333,9 @@ button:hover {
     margin: 0 0 0 13px;
     vertical-align: top;
   }
+
   #custom-checkbox {
     margin: 23px 12px 3px !important;
   }
-  
+
 }
